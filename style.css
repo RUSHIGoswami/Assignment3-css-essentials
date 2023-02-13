@@ -1,0 +1,112 @@
+/* Resetting properties with universal selector. */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* Using root scope for making color variables. */
+:root{
+  --pink-color: #f99;
+  --gray-color: #ececfb;
+  --black-color: #000;
+}
+
+/* Making body element flex so I can center the content with viewport height. */
+body{
+  display: flex;
+  font-family: 'Times New Roman', Times, serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styles for all the p elements in page. */
+p{
+  text-align: center;
+  font-size: 1em;
+  padding: 0.6em 1.5em;
+}
+
+/* main content box with given width and height. */
+main{
+  border: 1px solid var(--black-color);
+  width: 800px;
+  height: 500px;
+  padding: 0.8em 0.8em 1em;
+}
+
+/* A section to wrap whole the content and to effect the padding of main. */
+section{
+  border: 1px solid var(--black-color);
+  height: 100%;
+}
+
+/* First row in which only one div is there. */
+.row-1{
+  border: 1px solid var(--black-color);
+  background-color: var(--pink-color);
+  height: 180px;
+}
+
+/* Giving the header like properties to first p element of row 1. */
+.head{
+  /* changing the alignment */
+  text-align: left;
+  /* increasing font-size. */
+  font-size: 1.8em;
+  /* Changing padding for desired output. */
+  padding: 0.5em 2em 0.5em 5em;
+}
+
+/* Giving the second p element different padding and spacing. */
+.row-1 p:nth-child(2){
+  font-size: 1.2em;
+  padding-top: 1em;
+  word-spacing: 1.5px;
+}
+
+/* Making second row a inline-flex so the whole row stays inline while its items can have flex properties (in one row). */
+.row-2{
+  display: inline-flex;
+  height: 288px;
+}
+
+/* Column 1 of row 2 having an img. */
+.col-1{
+  border: 1px solid var(--black-color);
+  background-color: yellow;
+  width: 565px;
+  padding: 0.3em 0.5em;
+}
+
+/* Content of column-1. */
+.col-1 img{
+  width: 100%;
+  height: 100%
+}
+
+/* Column 2 of row 2 making it also inline-flex so that its child can use flex properties while column 2 stays inline. */
+.col-2{
+  width: 205px;
+  border: 1px solid var(--black-color);
+  background-color: var(--gray-color);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Image of about profile. */
+.col-2 img{
+  width: 70%;
+  height: 50%;
+  padding: 0.5em 0 0 0.6em;
+}
+
+/* Giving the header like properties to first p element of column 2 ofrow 2. */
+.head-about{
+  /* resetting the padding from p style */
+  padding: 0;
+  font-size: 1.8em;
+}
